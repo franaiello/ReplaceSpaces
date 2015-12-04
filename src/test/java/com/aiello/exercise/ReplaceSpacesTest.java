@@ -13,7 +13,13 @@ public class ReplaceSpacesTest {
 
     @Test
     public void replaceSpacesUsingCharArray() {
-        char[] result = ReplaceSpaces.replaceSpacesUsingCharArray("Mr John Smith".toCharArray(), 13);
+        char[] result = ReplaceSpaces.replaceSpacesUsingCharArray("Mr John Smith");
         assertThat(result).isEqualTo(new char[]{'M','r','%','2','0','J','o','h','n','%','2','0','S','m','i','t','h'});
+    }
+
+    @Test
+    public void replaceSpacesUsingCharArray_MiddleName() {
+        char[] result = ReplaceSpaces.replaceSpacesUsingCharArray("Mr John Adam Smith");
+        assertThat(result).isEqualTo(new char[]{'M','r','%','2','0','J','o','h','n','%','2','0','A','d','a','m','%','2','0','S','m','i','t','h'});
     }
 }
